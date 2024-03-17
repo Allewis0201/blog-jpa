@@ -36,6 +36,7 @@ public class ExampleAPIClient {
     {
         RestTemplate restTemplate = new RestTemplate(); // RestTemplate 객체 생성
         String url = "https://jsonplaceholder.typicode.com/posts";
+
         ResponseEntity<List> response = restTemplate.getForEntity(url, List.class);
         if(response.getStatusCode().is2xxSuccessful())
         {
