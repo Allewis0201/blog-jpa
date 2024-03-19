@@ -1,7 +1,7 @@
-package com.estsoft.blogjpa.model;
+package com.estsoft.blogjpa.domain;
 
-import dto.ArticleResponse;
-import dto.ArticleViewResponse;
+import com.estsoft.blogjpa.dto.ArticleResponse;
+import com.estsoft.blogjpa.dto.ArticleViewResponse;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;

@@ -1,11 +1,11 @@
 package com.estsoft.blogjpa.service;
 
-import com.estsoft.blogjpa.external.ExampleAPIClient;
-import com.estsoft.blogjpa.model.Article;
-import com.estsoft.blogjpa.model.Comment;
+import com.estsoft.blogjpa.dto.*;
+import com.estsoft.blogjpa.domain.Article;
+import com.estsoft.blogjpa.domain.Comment;
 import com.estsoft.blogjpa.repository.BlogRepository;
 import com.estsoft.blogjpa.repository.CommentRepository;
-import dto.*;
+import com.estsoft.blogjpa.dto.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

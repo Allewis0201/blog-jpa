@@ -1,6 +1,5 @@
-package dto;
+package com.estsoft.blogjpa.dto;
 
-import com.estsoft.blogjpa.model.Article;
 import lombok.*;
 
 import java.time.LocalDateTime;

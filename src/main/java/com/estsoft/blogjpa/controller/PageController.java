@@ -1,8 +1,8 @@
 package com.estsoft.blogjpa.controller;
 
-import com.estsoft.blogjpa.model.Article;
+import com.estsoft.blogjpa.domain.Article;
 import com.estsoft.blogjpa.service.BlogService;
-import dto.ArticleViewResponse;
+import com.estsoft.blogjpa.dto.ArticleViewResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

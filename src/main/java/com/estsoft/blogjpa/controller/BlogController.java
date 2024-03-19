@@ -1,17 +1,15 @@
 package com.estsoft.blogjpa.controller;
 
-import com.estsoft.blogjpa.model.Article;
+import com.estsoft.blogjpa.domain.Article;
 import com.estsoft.blogjpa.service.BlogService;
-import dto.AddArticleRequest;
-import dto.ArticleResponse;
-import dto.UpdateArticleRequest;
+import com.estsoft.blogjpa.dto.AddArticleRequest;
+import com.estsoft.blogjpa.dto.ArticleResponse;
+import com.estsoft.blogjpa.dto.UpdateArticleRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class BlogController {
