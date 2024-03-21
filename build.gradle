@@ -33,12 +33,16 @@ dependencies {
     //	use postgresql DBMS
     implementation 'org.postgresql:postgresql'
 
-    testImplementation 'ch.qos.logback:logback-classic:1.5.3'
+    //testImplementation 'ch.qos.logback:logback-classic:1.5.3'
+
 
 
     // use security
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+
+    //implementation "ch.qos.logback:logback-classic:1.3.0"
+
 }
 
 tasks.named('test') {

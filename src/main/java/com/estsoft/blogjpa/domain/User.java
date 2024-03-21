@@ -27,7 +27,7 @@ public class User implements UserDetails {
     @Column(name = "email", updatable = false, unique = true)
     private String email;
 
-    @Getter
+
     @Column(name = "password", updatable = false)
     private String password;
 

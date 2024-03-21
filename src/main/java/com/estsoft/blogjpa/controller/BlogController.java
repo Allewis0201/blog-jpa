@@ -22,7 +22,7 @@ public class BlogController {
     @PostMapping("/api/articles")   // json { "title" : "제목", "content" : "내용"}
     public ResponseEntity<ArticleResponse> addArticle(@RequestBody AddArticleRequest request) {
         Article article = blogService.save(request);
-        return ResponseEntity.status(HttpStatus.CREATED).body(article.toResponse());
+        return ResponseEntity.status(HttpStatus.CREATED).body(article.toResponse()); // json { "title" : "제목", "content" : "내용"}
     }
 
     @RequestMapping(value = "/api/articles", method = RequestMethod.GET)
