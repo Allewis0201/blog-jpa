@@ -12,6 +12,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -25,6 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
@@ -43,6 +45,9 @@ class BlogControllerTest {
 
     @Autowired
     private BlogRepository blogRepository;
+
+    @Mock   // 실제 동작이 되지는 않지만 실제 동작이 된 것처럼 처리
+    UserRepository userRepository;
 
     @Autowired
     private ObjectMapper objectMapper;
@@ -143,7 +148,6 @@ class BlogControllerTest {
         blogRepository.save(article);
         Long id = article.getId();
 
-        // given : 저장하고 싶은 블로그 정보
         UpdateArticleRequest request = new UpdateArticleRequest("제목수정","내용수정");
         // object -> json (오브젝트 매퍼 사용)
         String json = objectMapper.writeValueAsString(request);
@@ -157,12 +161,18 @@ class BlogControllerTest {
 
         // then
 
-        //저장이 잘 되었는지 확인
+        //수정이 잘 되었는지 확인
         resultActions.andExpect(status().isOk())
                 .andExpect(jsonPath("title").value(request.getTitle()))
                 .andExpect(jsonPath("content").value(request.getContent()))
         ;
 
+        Article updatedArticle = blogRepository.findById(id).orElseThrow();
+        assertThat(updatedArticle.getTitle()).isEqualTo(request.getTitle());
+        assertThat(updatedArticle.getContent()).isEqualTo(request.getContent());
+
     }
+
+    // 코드 변경 사항 가정 (테스트 코드 삭제)
 
 }
