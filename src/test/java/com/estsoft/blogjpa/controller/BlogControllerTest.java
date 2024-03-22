@@ -173,6 +173,6 @@ class BlogControllerTest {
 
     }
 
-    // 변경 사항 가정
+    // 코드 변경 사항 가정 (테스트 코드 삭제)
 
 }
