@@ -173,4 +173,6 @@ class BlogControllerTest {
 
     }
 
+    // 변경 사항 가정
+
 }
