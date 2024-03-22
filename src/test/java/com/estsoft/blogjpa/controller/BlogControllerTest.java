@@ -174,8 +174,12 @@ class BlogControllerTest {
     
     
     
-    
-    // conflict 생성
-    // merge 실습
+
+    @Test // conflict 생성
+    public void test()
+    {
+        // merge 실습
+    }
+
 
 }
